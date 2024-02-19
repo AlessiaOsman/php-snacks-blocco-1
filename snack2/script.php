@@ -6,7 +6,7 @@ $age = $_GET['age'] ?? '';
 
 $message = 'Accesso ';
 
-if(strlen($name) < 3 && !str_contains($email, '@') && !str_contains($email, '.') && !is_numeric($age)){
+if(strlen($name) < 3 || !str_contains($email, '@') || !str_contains($email, '.') || !is_numeric($age)){
     $message .= 'non riuscito';
 } else {
     $message .= 'riuscito';
