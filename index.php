@@ -1,3 +1,8 @@
+<?php
+$folders = array_slice(scandir(getcwd()), 2);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +15,9 @@
 <body>
     <h1>php-snacks-blocco-1</h1>
     <ul>
-        <li><a href="snack1/index.php">snack1</a></li>
-        <li><a href="snack2/index.html">snack2</a></li>
-        <li><a href="bonus/index.php">bonus</a></li>
+        <?php foreach ($folders as $folder) : ?>
+            <li><a href="<?=$folder?>"><?= $folder?></a></li>
+            <?php endforeach ?>
     </ul>
 </body>
 
